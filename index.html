@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Debu (@iydebu) · games and links</title>
+<meta name="description" content="Devashish Tiwari (Debu), gameplay programmer. Play LudoNow free in your browser, and see my other games: DroneFight, Gali Gang and WhisperWriter.">
+<link rel="canonical" href="https://links.iydebu.com/">
+<meta name="theme-color" content="#16122e">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://links.iydebu.com/">
+<meta property="og:title" content="Debu (@iydebu) · games and links">
+<meta property="og:description" content="Play LudoNow free in your browser. No download, no sign-up.">
+<meta property="og:image" content="https://links.iydebu.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://links.iydebu.com/og.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/lilita-one.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: 'Lilita One'; src: url(fonts/lilita-one.woff2) format('woff2'); font-display: swap; }
+:root {
+  --bg: #16122e; --card: #221c45; --card2: #2b2357; --line: rgba(255,255,255,.09);
+  --text: #f4f1ff; --mute: #b9b1dc; --yellow: #ffcf2e; --red: #ff4d5e; --green: #2fd36b; --blue: #3d8bff;
+  --head: 'Lilita One', 'Arial Rounded MT Bold', system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  min-height: 100vh; color: var(--text); background: var(--bg);
+  font: 16px/1.4 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(60vmax 40vmax at 0% 0%, rgba(255,77,94,.20), transparent 60%),
+    radial-gradient(60vmax 40vmax at 100% 0%, rgba(61,139,255,.20), transparent 60%),
+    radial-gradient(60vmax 40vmax at 100% 100%, rgba(255,207,46,.13), transparent 60%),
+    radial-gradient(60vmax 40vmax at 0% 100%, rgba(47,211,107,.15), transparent 60%);
+}
+a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+.wrap { max-width: 460px; margin: 0 auto; padding: 44px 16px calc(28px + env(safe-area-inset-bottom)); }
+
+/* header */
+header { text-align: center; }
+.bot { display: inline-block; border: 0; padding: 0; background: none; cursor: pointer; position: relative; }
+.bot img { width: 84px; height: 84px; image-rendering: pixelated; border-radius: 20px; display: block;
+  box-shadow: 0 6px 0 #b8901a, 0 14px 30px rgba(0,0,0,.45); }
+.bot.jump img { animation: jump .55s cubic-bezier(.3,1.6,.5,1); }
+@keyframes jump { 0%{transform:translateY(0)} 35%{transform:translateY(-26px) rotate(-6deg)} 70%{transform:translateY(0) scale(1.08,.92)} 100%{transform:none} }
+.bubble { position: absolute; left: 50%; bottom: 100%; transform: translate(-50%, 4px); white-space: nowrap;
+  background: #fff; color: #16122e; font: 14px var(--head); padding: 5px 10px; border-radius: 10px;
+  opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; }
+.bot.say .bubble { opacity: 1; transform: translate(-50%, -8px); }
+h1 { font: 30px/1.1 var(--head); margin-top: 16px; letter-spacing: .3px; }
+.handle { color: var(--mute); font-size: 14px; margin-top: 2px; }
+.tag { margin: 10px auto 0; max-width: 330px; font-size: 15px; color: #e3ddff; }
+
+/* featured */
+.label { font: 13px var(--head); letter-spacing: 1.5px; color: var(--yellow); margin: 26px 2px 8px; text-transform: uppercase; }
+.feat { display: grid; grid-template-columns: 42% 1fr; gap: 14px; padding: 12px; border-radius: 22px;
+  background: linear-gradient(160deg, #3a1f7a, #2a1a5c 55%, #221c45); border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.vid { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 9/16; background: #000; }
+.vid video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.snd { position: absolute; right: 6px; bottom: 6px; border: 0; border-radius: 99px; padding: 5px 9px;
+  background: rgba(0,0,0,.6); color: #fff; font-size: 12px; cursor: pointer; }
+.feat .info { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.logo { font: 34px/1 var(--head); letter-spacing: .5px; }
+.logo span:nth-child(4n+1){color:var(--red)} .logo span:nth-child(4n+2){color:var(--green)}
+.logo span:nth-child(4n+3){color:var(--yellow)} .logo span:nth-child(4n){color:var(--blue)}
+.feat p { font-size: 14px; color: #e3ddff; margin-top: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.chips i { font-style: normal; font-size: 11.5px; padding: 3px 8px; border-radius: 99px; border: 1px solid rgba(255,255,255,.25); }
+.play { margin-top: 14px; display: block; text-align: center; font: 19px var(--head); color: #3a2400; letter-spacing: .3px;
+  background: linear-gradient(#ffe066, var(--yellow)); padding: 12px 8px; border-radius: 14px;
+  box-shadow: 0 5px 0 #c98f00, 0 10px 18px rgba(0,0,0,.35); animation: pulse 2.2s ease-in-out infinite; }
+.play:active { transform: translateY(4px); box-shadow: 0 1px 0 #c98f00; }
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.04)} }
+
+/* list */
+.list { display: grid; gap: 10px; }
+.row { display: grid; grid-template-columns: 112px 1fr 18px; gap: 12px; align-items: center; padding: 9px;
+  border-radius: 16px; background: var(--card); border: 1px solid var(--line); transition: background .15s, transform .15s; }
+.row:hover { background: var(--card2); transform: translateY(-2px); }
+.row:active { transform: scale(.98); }
+.row img { width: 112px; height: 59px; object-fit: cover; border-radius: 9px; display: block; }
+.row b { font: 18px/1.1 var(--head); letter-spacing: .3px; display: block; }
+.row small { display: block; color: var(--mute); font-size: 13px; margin-top: 3px; }
+.row .go { color: var(--mute); font-size: 20px; }
+
+/* socials */
+.soc { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 26px; }
+.soc a { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; padding: 8px 13px; border-radius: 99px;
+  background: rgba(255,255,255,.07); border: 1px solid var(--line); }
+.soc a:hover { background: rgba(255,255,255,.14); }
+.soc svg { width: 16px; height: 16px; fill: currentColor; }
+footer { text-align: center; color: #8d84b8; font-size: 12px; margin-top: 22px; }
+@media (prefers-reduced-motion: reduce) { .play { animation: none; } .bot.jump img { animation: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <button class="bot" id="bot" aria-label="Say hi to the robot">
+      <span class="bubble" id="bubble">Hi! 👋</span>
+      <img src="favicon.svg" alt="Debu's pixel robot" width="84" height="84">
+    </button>
+    <h1>Devashish Tiwari (Debu)</h1>
+    <div class="handle">@iydebu · gameplay programmer</div>
+    <p class="tag">I make games. Tap one and play.</p>
+  </header>
+
+  <div class="label">▶ Play now</div>
+  <section class="feat">
+    <div class="vid">
+      <video id="reel" src="assets/ludonow-reel.mp4" poster="assets/ludonow-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="LudoNow gameplay video"></video>
+      <button class="snd" id="snd" aria-label="Turn sound on">🔇 Sound</button>
+    </div>
+    <div class="info">
+      <div class="logo" aria-label="LudoNow"><span>L</span><span>U</span><span>D</span><span>O</span><span>N</span><span>O</span><span>W</span></div>
+      <p>Ludo in your browser. Play the computer, friends on one phone, or friends online.</p>
+      <div class="chips"><i>Free</i><i>No download</i><i>No sign-up</i></div>
+      <a class="play" href="https://ludonow.iydebu.com/?utm_source=instagram&amp;utm_medium=bio" data-go="ludonow">Play LudoNow ▶</a>
+    </div>
+  </section>
+
+  <div class="label">My other games and tools</div>
+  <nav class="list">
+    <a class="row" href="https://dronefight.iydebu.com/?utm_source=instagram&amp;utm_medium=bio">
+      <img src="assets/dronefight.jpg" alt="" width="112" height="59" loading="lazy">
+      <span><b>DroneFight</b><small>Drone arena fighter · Windows alpha</small></span><span class="go">›</span></a>
+    <a class="row" href="https://galigang.iydebu.com/?utm_source=instagram&amp;utm_medium=bio">
+      <img src="assets/galigang.jpg" alt="" width="112" height="59" loading="lazy">
+      <span><b>Gali Gang</b><small>Logic puzzle · Android early access</small></span><span class="go">›</span></a>
+    <a class="row" href="https://whisperwriter.iydebu.com/?utm_source=instagram&amp;utm_medium=bio">
+      <img src="assets/whisperwriter.jpg" alt="" width="112" height="59" loading="lazy">
+      <span><b>WhisperWriter</b><small>Talk, and it types · Windows</small></span><span class="go">›</span></a>
+    <a class="row" href="https://iydebu.com/?utm_source=instagram&amp;utm_medium=bio">
+      <img src="assets/portfolio.jpg" alt="" width="112" height="59" loading="lazy">
+      <span><b>My portfolio</b><small>A website you can play like a game</small></span><span class="go">›</span></a>
+  </nav>
+
+  <div class="soc">
+    <a href="https://www.youtube.com/@iydebu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9L15.5 12l-5.8 3.1z"/></svg>YouTube</a>
+    <a href="https://github.com/iydebu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+    <a href="https://www.linkedin.com/in/iydebu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 2H3.6A1.6 1.6 0 0 0 2 3.6v16.8A1.6 1.6 0 0 0 3.6 22h16.8a1.6 1.6 0 0 0 1.6-1.6V3.6A1.6 1.6 0 0 0 20.4 2zM8 19H5V9.5h3V19zM6.5 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5S12.7 13 12.7 14.3V19h-3V9.5h2.8v1.3h.1a3.1 3.1 0 0 1 2.8-1.5c3 0 3.6 2 3.6 4.6V19z"/></svg>LinkedIn</a>
+    <a href="https://t.me/iydebu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 3.6 18.6 19.3c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 12.9 1.1 11.4c-1.1-.3-1.1-1 .2-1.5L20.5 2.5c.9-.3 1.7.2 1.4 1.1z"/></svg>Telegram</a>
+    <a href="mailto:iydebu.io@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4 7.3V17h16V7.3l-8 4.9zM4.6 7l7.4 4.5L19.4 7H4.6z"/></svg>Email</a>
+  </div>
+  <footer>© 2026 Devashish Tiwari</footer>
+</div>
+<script>
+(() => {
+  const bot = document.getElementById('bot'), lines = ['Hi! 👋', 'Play LudoNow!', 'Made by Debu', 'Boing!', 'Roll a six!'];
+  let n = 0, t;
+  bot.addEventListener('click', () => {
+    document.getElementById('bubble').textContent = lines[n++ % lines.length];
+    bot.classList.remove('jump'); void bot.offsetWidth; bot.classList.add('jump', 'say');
+    clearTimeout(t); t = setTimeout(() => bot.classList.remove('say'), 1400);
+  });
+  const v = document.getElementById('reel'), s = document.getElementById('snd');
+  s.addEventListener('click', () => {
+    v.muted = !v.muted; if (!v.muted) { v.currentTime = 0; v.play(); }
+    s.textContent = v.muted ? '🔇 Sound' : '🔊 On'; s.setAttribute('aria-label', v.muted ? 'Turn sound on' : 'Turn sound off');
+  });
+  v.play && v.play().catch(() => {});
+})();
+</script>
+</body>
+</html>
