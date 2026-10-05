@@ -1,0 +1,12 @@
+# links.iydebu.com on Cloudflare (free plan): static files only, no server code.
+# Deploy: npx wrangler deploy     (needs wrangler, installed with LudoNow; run it from this folder)
+name = "links-site"
+compatibility_date = "2025-09-01"
+workers_dev = true
+routes = [
+  { pattern = "links.iydebu.com", custom_domain = true },
+]
+
+[assets]
+directory = "."
+not_found_handling = "404-page"

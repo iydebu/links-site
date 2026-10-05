@@ -1,6 +1,6 @@
 # links-site (links.iydebu.com)
 
-Debu's custom "link in bio" page for Instagram. Made 2026-10-06. Public repo iydebu/links-site, GitHub Pages,
+Debu's custom "link in bio" page for Instagram. Made 2026-10-06. Public repo iydebu/links-site, hosted on Cloudflare (Worker links-site, deploy `npx wrangler deploy`; GitHub Pages off),
 custom domain links.iydebu.com (Cloudflare DNS: CNAME links -> iydebu.github.io, DNS only / grey cloud).
 
 Rules

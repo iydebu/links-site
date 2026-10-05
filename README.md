@@ -8,4 +8,10 @@ Debu's link page for Instagram (and anywhere else one link fits). Plain HTML, no
 - `node tools/check.mjs` - headless Chrome check: phone/small/PC screenshots, sideways scroll, video plays,
   Play button on the first screen, every link answers. `LINKS_URL=https://links.iydebu.com/ node tools/check.mjs` checks the live site.
 
-Hosted on GitHub Pages (custom domain via `CNAME`, DNS CNAME `links` -> `iydebu.github.io` in Cloudflare).
+Hosted on Cloudflare (see Hosting below). GitHub Pages is turned off.
+
+## Hosting
+
+Cloudflare (free plan), static assets Worker `links-site`, custom domain links.iydebu.com (Cloudflare makes the
+HTTPS certificate). Deploy from this folder: `npx wrangler deploy`. `.assetsignore` keeps tools, notes and git out
+of the upload. Live check: `LINKS_URL=https://links.iydebu.com/ node tools/check.mjs`.

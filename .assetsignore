@@ -1,0 +1,10 @@
+.git
+.hermes
+tools
+node_modules
+wrangler.toml
+.assetsignore
+.gitignore
+README.md
+AGENTS.md
+.wrangler
